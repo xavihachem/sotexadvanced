@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sotex - العازل الحراري للمركبات | عزل حراري عالي الجودة</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="عازل حراري وصيني عالي الجودة للمركبات من Sotex. أسعار تنافسية تبدأ من 750 دينار للمتر المربع مع توصيل لجميع ولايات الجزائر.">
+    <meta name="keywords" content="عازل حراري, عازل صيني, مركبات, سيارات, الجزائر, Sotex, توصيل مجاني">
+    <meta name="author" content="Sotex">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sotex">
+    <meta property="og:title" content="Sotex - العازل الحراري للمركبات">
+    <meta property="og:description" content="عازل حراري وصيني عالي الجودة للمركبات. أسعار تنافسية تبدأ من 750 دينار للمتر المربع. توصيل لجميع ولايات الجزائر 🚚">
+    <meta property="og:image" content="/images/image1.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://sotex.com">
+    <meta property="og:locale" content="ar_DZ">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sotex - العازل الحراري للمركبات">
+    <meta name="twitter:description" content="عازل حراري وصيني عالي الجودة للمركبات. أسعار تنافسية تبدأ من 750 دينار للمتر المربع 🚗">
+    <meta name="twitter:image" content="/images/image1.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#f97316">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-4 py-5">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl font-bold text-orange-500">Sotex</h1>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            <!-- Left Side - Product Images (First on Mobile) -->
+            <div class="order-1 lg:order-2">
+                <div class="bg-white rounded-2xl shadow-xl p-6 sticky top-4">
+                    <!-- Main Image with gradient overlay -->
+                    <div class="relative mb-6 group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl z-10"></div>
+                        <img id="mainImage" src="/images/image1.png" alt="Product" 
+                            class="w-full h-[500px] object-cover rounded-2xl shadow-lg transition-transform duration-500 group-hover:scale-[1.02]">
+                        
+                        <!-- Logo Overlay -->
+                        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
+                            <div class="bg-white/95 backdrop-blur-sm px-6 py-3 rounded-xl shadow-2xl border border-gray-100">
+                                <img src="/logo.png" alt="Sotex Logo" class="h-10 object-contain">
+                            </div>
+                        </div>
+                        
+                        <!-- Image Counter -->
+                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold z-20">
+                            <span id="currentImageIndex">1</span> / 5
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button onclick="nextImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-20 flex items-center justify-center">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="previousImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-20 flex items-center justify-center">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Thumbnail Gallery with better design -->
+                    <div class="relative">
+                        <div class="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory" id="thumbnailContainer">
+                            <img src="/images/image1.png" onclick="changeImage(this.src, 0)" 
+                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-blue-500 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
+                            <img src="/images/image2.png" onclick="changeImage(this.src, 1)" 
+                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-blue-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
+                            <img src="/images/image3.png" onclick="changeImage(this.src, 2)" 
+                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-blue-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
+                            <img src="/images/image4.png" onclick="changeImage(this.src, 3)" 
+                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-blue-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
+                            <img src="/images/image5.png" onclick="changeImage(this.src, 4)" 
+                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-blue-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Right Side - Product Info & Form (Second on Mobile) -->
+            <div class="order-2 lg:order-1">
+            <div class="bg-white rounded-lg shadow-lg p-6 lg:p-8">
+                <!-- Product Title -->
+                <h1 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
+                    العازل الحراري للمركبات
+                </h1>
+                
+                <!-- Product Description -->
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    عازل حراري وصيني عالي الجودة للمركبات<br>
+                    السعر: 750 دينار للمتر المربع<br>
+                    <span class="inline-flex items-center gap-2 text-green-600 font-semibold">
+                        <i class="fas fa-gift"></i>
+                        عرض خاص: 700 دينار للمتر المربع عند طلب 10 أمتار مربعة أو أكثر!
+                    </span>
+                </p>
+                
+                <!-- Price -->
+                <div class="mb-6">
+                    <span class="text-4xl font-bold text-orange-500" id="displayPrice">750 دينار</span>
+                    <span class="text-sm text-gray-500 block mt-1">للمتر المربع</span>
+                </div>
+                
+                <!-- Rating -->
+                <div class="flex gap-1 mb-6">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                </div>
+                
+                <!-- Form -->
+                <form class="space-y-4">
+                    <!-- Name and Phone -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <input type="text" placeholder="الاسم الكامل" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="relative">
+                            <input type="tel" id="phoneInput" placeholder="ادخل رقمك" 
+                                class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                oninput="validatePhone()">
+                            <i class="fas fa-phone absolute right-4 top-1/2 transform -translate-y-1/2 text-red-500"></i>
+                            <div id="phoneError" class="text-red-500 text-xs mt-1 hidden">الرجاء إدخال رقم جزائري صحيح (يبدأ بـ 05، 06، أو 07)</div>
+                            <div id="phoneSuccess" class="text-green-500 text-xs mt-1 hidden"><i class="fas fa-check-circle"></i> رقم صحيح</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wilaya and Baladiya -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <select id="wilayaSelect" onchange="updateBaladiyat();" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">الولاية</option>
+                                <option value="01">01 - أدرار</option>
+                                <option value="02">02 - الشلف</option>
+                                <option value="03">03 - الأغواط</option>
+                                <option value="04">04 - أم البواقي</option>
+                                <option value="05">05 - باتنة</option>
+                                <option value="06">06 - بجاية</option>
+                                <option value="07">07 - بسكرة</option>
+                                <option value="08">08 - بشار</option>
+                                <option value="09">09 - البليدة</option>
+                                <option value="10">10 - البويرة</option>
+                                <option value="11">11 - تمنراست</option>
+                                <option value="12">12 - تبسة</option>
+                                <option value="13">13 - تلمسان</option>
+                                <option value="14">14 - تيارت</option>
+                                <option value="15">15 - تيزي وزو</option>
+                                <option value="16">16 - الجزائر</option>
+                                <option value="17">17 - الجلفة</option>
+                                <option value="18">18 - جيجل</option>
+                                <option value="19">19 - سطيف</option>
+                                <option value="20">20 - سعيدة</option>
+                                <option value="21">21 - سكيكدة</option>
+                                <option value="22">22 - سيدي بلعباس</option>
+                                <option value="23">23 - عنابة</option>
+                                <option value="24">24 - قالمة</option>
+                                <option value="25">25 - قسنطينة</option>
+                                <option value="26">26 - المدية</option>
+                                <option value="27">27 - مستغانم</option>
+                                <option value="28">28 - المسيلة</option>
+                                <option value="29">29 - معسكر</option>
+                                <option value="30">30 - ورقلة</option>
+                                <option value="31">31 - وهران</option>
+                                <option value="32">32 - البيض</option>
+                                <option value="33">33 - إليزي</option>
+                                <option value="34">34 - برج بوعريريج</option>
+                                <option value="35">35 - بومرداس</option>
+                                <option value="36">36 - الطارف</option>
+                                <option value="37">37 - تندوف</option>
+                                <option value="38">38 - تيسمسيلت</option>
+                                <option value="39">39 - الوادي</option>
+                                <option value="40">40 - خنشلة</option>
+                                <option value="41">41 - سوق أهراس</option>
+                                <option value="42">42 - تيبازة</option>
+                                <option value="43">43 - ميلة</option>
+                                <option value="44">44 - عين الدفلى</option>
+                                <option value="45">45 - النعامة</option>
+                                <option value="46">46 - عين تموشنت</option>
+                                <option value="47">47 - غرداية</option>
+                                <option value="48">48 - غليزان</option>
+                                <option value="49">49 - تيميمون</option>
+                                <option value="50">50 - برج باجي مختار</option>
+                                <option value="51">51 - أولاد جلال</option>
+                                <option value="52">52 - بني عباس</option>
+                                <option value="53">53 - عين صالح</option>
+                                <option value="54">54 - عين قزام</option>
+                                <option value="55">55 - تقرت</option>
+                                <option value="56">56 - جانت</option>
+                                <option value="57">57 - المغير</option>
+                                <option value="58">58 - المنيعة</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="baladiyaSelect" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">البلدية</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Address -->
+                    <div>
+                        <input type="text" placeholder="العنوان" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    
+                    <!-- Delivery Options -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fas fa-truck text-orange-500"></i>
+                            <span class="font-semibold">سعر التوصيل</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button type="button" onclick="selectDelivery('office')" id="officeDelivery" 
+                                class="delivery-option flex flex-col items-center justify-center p-4 border-2 border-orange-500 bg-orange-50 rounded-lg transition-all duration-300 hover:shadow-md">
+                                <i class="fas fa-building text-2xl text-orange-500 mb-2"></i>
+                                <span class="font-semibold text-gray-800">توصيل إلى المكتب</span>
+                                <span class="text-sm text-orange-600 font-bold mt-1" id="officePrice">500 دينار</span>
+                            </button>
+                            <button type="button" onclick="selectDelivery('home')" id="homeDelivery" 
+                                class="delivery-option flex flex-col items-center justify-center p-4 border-2 border-gray-300 bg-white rounded-lg transition-all duration-300 hover:shadow-md hover:border-orange-400">
+                                <i class="fas fa-home text-2xl text-gray-500 mb-2"></i>
+                                <span class="font-semibold text-gray-800">توصيل إلى المنزل</span>
+                                <span class="text-sm text-gray-600 font-bold mt-1" id="homePrice">850 دينار</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Area Selection -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">الكمية (بالمتر مربع)</label>
+                        <input type="number" id="lengthInput" value="1" min="1" oninput="updatePriceByLength()" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div class="mt-2 bg-gradient-to-r from-green-50 to-emerald-50 border-r-4 border-green-500 p-3 rounded-lg">
+                            <p class="text-sm font-semibold text-green-700 flex items-center gap-2">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                وفّر 50 دينار للمتر! اطلب 10 أمتار مربعة أو أكثر واحصل على السعر الخاص 700 دينار للمتر المربع
+                                <i class="fas fa-fire text-orange-500 animate-pulse"></i>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg transition duration-300">
+                        اشتري الآن
+                    </button>
+                    
+                    <!-- Order Summary -->
+                    <div class="border-t pt-4 mt-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <i class="fas fa-shopping-cart text-orange-500"></i>
+                            <span class="font-semibold">ملخص الطلبية</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg mb-2">
+                            <div class="flex items-center gap-3">
+                                <img src="/images/image1.png" alt="Product" class="w-12 h-12 rounded-lg object-cover">
+                                <span class="text-sm">العازل الحراري</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold" id="summaryPrice">750 دينار</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-truck text-orange-500"></i>
+                                <span class="font-semibold">سعر التوصيل</span>
+                            </div>
+                            <span class="font-bold text-orange-500" id="deliveryFeeSummary">500 دينار</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t">
+                            <span class="text-xl font-bold">المجموع</span>
+                            <span class="text-2xl font-bold text-orange-500" id="totalPrice">1250 دينار</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
