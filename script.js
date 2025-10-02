@@ -236,6 +236,42 @@ function updateBaladiyat() {
     }
 }
 
+// Success Modal Functions
+function showSuccessModal() {
+    const modal = document.getElementById('successModal');
+    const modalContent = document.getElementById('modalContent');
+    const orderNumber = 'SO-' + Math.floor(10000 + Math.random() * 90000);
+    document.getElementById('orderNumber').textContent = '#' + orderNumber;
+    
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+    }, 10);
+}
+
+function closeSuccessModal() {
+    const modal = document.getElementById('successModal');
+    const modalContent = document.getElementById('modalContent');
+    
+    modalContent.classList.remove('scale-100', 'opacity-100');
+    modalContent.classList.add('scale-95', 'opacity-0');
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 300);
+}
+
+// Close modal on background click
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('successModal');
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeSuccessModal();
+        }
+    });
+});
+
 // Form submission with email integration
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('form').addEventListener('submit', async (e) => {
@@ -266,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const submitBtn = document.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'جاري الإرسال...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> جاري الإرسال...';
             submitBtn.disabled = true;
             
             const response = await fetch('/api/order', {
@@ -280,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
             
             if (result.success) {
-                alert('✅ تم إرسال طلبك بنجاح! سنتواصل معك قريباً.');
+                showSuccessModal();
                 document.querySelector('form').reset();
                 document.getElementById('phoneSuccess').classList.add('hidden');
                 document.getElementById('phoneInput').classList.remove('border-green-500');
@@ -288,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('❌ ' + result.message);
             }
             
-            submitBtn.textContent = originalText;
+            submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
             
         } catch (error) {
