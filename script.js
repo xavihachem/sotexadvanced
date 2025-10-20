@@ -325,6 +325,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
             
             if (result.success) {
+                // Track Facebook Pixel Purchase Event
+                if (typeof fbq !== 'undefined') {
+                    const totalValue = parseFloat(formData.total.replace(/[^\d]/g, ''));
+                    fbq('track', 'Purchase', {
+                        value: totalValue,
+                        currency: 'DZD',
+                        content_name: 'أدوات العناية والتجميل',
+                        content_type: 'product',
+                        num_items: formData.area
+                    });
+                }
+                
                 showSuccessModal();
                 document.querySelector('form').reset();
                 document.getElementById('phoneSuccess').classList.add('hidden');
