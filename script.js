@@ -285,6 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('form').addEventListener('submit', async (e) => {
         e.preventDefault();
+        console.log('🚀 Form submitted!');
         
         const formData = {
             name: document.querySelector('input[placeholder="الاسم الكامل"]').value,
