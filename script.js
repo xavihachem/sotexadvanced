@@ -1,11 +1,17 @@
 // Image Gallery with Auto-Rotate
 let currentImageIndex = 0;
 const images = [
-    '/images/image1.png',
-    '/images/image2.png',
-    '/images/image3.png',
-    '/images/image4.png',
-    '/images/image5.png'
+    '/images/grouped/present1.jpg',
+    '/images/grouped/present2.jpg',
+    '/images/grouped/image5.jpg',
+    '/images/individualimages/image1.jpg',
+    '/images/individualimages/image2.jpg',
+    '/images/individualimages/image3.jpg',
+    '/images/individualimages/image4.jpg',
+    '/images/individualimages/image5.jpg',
+    '/images/individualimages/image6.jpg',
+    '/images/individualimages/image7version1.jpg',
+    '/images/individualimages/image7version2.jpg'
 ];
 
 // Change image function
@@ -24,9 +30,9 @@ function changeImage(src, index) {
         thumbnails.forEach((thumb, i) => {
             if (i === index) {
                 thumb.classList.remove('border-gray-200');
-                thumb.classList.add('border-blue-500');
+                thumb.classList.add('border-pink-500');
             } else {
-                thumb.classList.remove('border-blue-500');
+                thumb.classList.remove('border-pink-500');
                 thumb.classList.add('border-gray-200');
             }
         });
@@ -98,7 +104,7 @@ function validatePhone() {
 
 // Delivery selection
 let selectedDeliveryType = 'office';
-let deliveryFee = 500;
+let deliveryFee = 600;
 
 function selectDelivery(type) {
     selectedDeliveryType = type;
@@ -109,51 +115,56 @@ function selectDelivery(type) {
     if (type === 'home') {
         deliveryFee = 850;
         homeBtn.classList.remove('border-gray-300', 'bg-white');
-        homeBtn.classList.add('border-orange-500', 'bg-orange-50');
+        homeBtn.classList.add('border-pink-500', 'bg-gradient-to-br', 'from-pink-50', 'to-purple-50');
         homeBtn.querySelector('i').classList.remove('text-gray-500');
-        homeBtn.querySelector('i').classList.add('text-orange-500');
+        homeBtn.querySelector('i').classList.add('text-pink-500');
         
-        officeBtn.classList.remove('border-orange-500', 'bg-orange-50');
+        officeBtn.classList.remove('border-pink-500', 'bg-gradient-to-br', 'from-pink-50', 'to-purple-50');
         officeBtn.classList.add('border-gray-300', 'bg-white');
-        officeBtn.querySelector('i').classList.remove('text-orange-500');
+        officeBtn.querySelector('i').classList.remove('text-pink-500');
         officeBtn.querySelector('i').classList.add('text-gray-500');
         
         document.getElementById('deliveryFeeSummary').textContent = '850 دينار';
     } else {
-        deliveryFee = 500;
+        deliveryFee = 600;
         officeBtn.classList.remove('border-gray-300', 'bg-white');
-        officeBtn.classList.add('border-orange-500', 'bg-orange-50');
+        officeBtn.classList.add('border-pink-500', 'bg-gradient-to-br', 'from-pink-50', 'to-purple-50');
         officeBtn.querySelector('i').classList.remove('text-gray-500');
-        officeBtn.querySelector('i').classList.add('text-orange-500');
+        officeBtn.querySelector('i').classList.add('text-pink-500');
         
-        homeBtn.classList.remove('border-orange-500', 'bg-orange-50');
+        homeBtn.classList.remove('border-pink-500', 'bg-gradient-to-br', 'from-pink-50', 'to-purple-50');
         homeBtn.classList.add('border-gray-300', 'bg-white');
-        homeBtn.querySelector('i').classList.remove('text-orange-500');
+        homeBtn.querySelector('i').classList.remove('text-pink-500');
         homeBtn.querySelector('i').classList.add('text-gray-500');
         
-        document.getElementById('deliveryFeeSummary').textContent = '500 دينار';
+        document.getElementById('deliveryFeeSummary').textContent = '600 دينار';
     }
     
     updateTotal();
 }
 
 function updatePriceByLength() {
-    const length = parseInt(document.getElementById('lengthInput').value) || 1;
-    const pricePerMeter = length >= 10 ? 700 : 750;
+    const quantity = parseInt(document.getElementById('lengthInput').value) || 1;
+    const basePrice = 5500;
+    const discountedPrice = 5000; // 500 DZD off
+    const pricePerUnit = quantity >= 2 ? discountedPrice : basePrice;
+    const productTotal = quantity * pricePerUnit;
     
-    document.getElementById('displayPrice').textContent = `${pricePerMeter} دينار`;
-    document.getElementById('summaryPrice').textContent = `${pricePerMeter} دينار`;
+    document.getElementById('displayPrice').textContent = `${pricePerUnit.toLocaleString()} دينار`;
+    document.getElementById('summaryPrice').textContent = `${productTotal.toLocaleString()} دينار`;
     
     updateTotal();
 }
 
 function updateTotal() {
-    const length = parseInt(document.getElementById('lengthInput').value) || 1;
-    const pricePerMeter = length >= 10 ? 700 : 750;
-    const productTotal = length * pricePerMeter;
+    const quantity = parseInt(document.getElementById('lengthInput').value) || 1;
+    const basePrice = 5500;
+    const discountedPrice = 5000; // 500 DZD off
+    const pricePerUnit = quantity >= 2 ? discountedPrice : basePrice;
+    const productTotal = quantity * pricePerUnit;
     const total = productTotal + deliveryFee;
     
-    document.getElementById('totalPrice').textContent = `${total} دينار`;
+    document.getElementById('totalPrice').textContent = `${total.toLocaleString()} دينار`;
 }
 
 // Complete Baladiyat data for all 58 Algerian wilayas
@@ -332,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى.');
             
             const submitBtn = document.querySelector('button[type="submit"]');
-            submitBtn.textContent = 'اشتري الآن';
+            submitBtn.innerHTML = '<i class="fas fa-shopping-cart ml-2"></i> اشتري الآن';
             submitBtn.disabled = false;
         }
     });
