@@ -263,6 +263,22 @@ function closeSuccessModal() {
     const modal = document.getElementById('successModal');
     const modalContent = document.getElementById('modalContent');
     
+    // Track Facebook Pixel Purchase event
+    if (typeof fbq !== 'undefined') {
+        const quantity = parseInt(document.getElementById('lengthInput').value) || 1;
+        const pricePerUnit = 5900;
+        const discount = quantity >= 2 ? 500 : 0;
+        const productTotal = (quantity * pricePerUnit) - discount;
+        
+        fbq('track', 'Purchase', {
+            value: productTotal,
+            currency: 'DZD',
+            content_name: 'مجموعة أدوات العناية والتجميل الفاخرة',
+            content_type: 'product',
+            num_items: quantity
+        });
+    }
+    
     modalContent.classList.remove('scale-100', 'opacity-100');
     modalContent.classList.add('scale-95', 'opacity-0');
     
