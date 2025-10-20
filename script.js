@@ -145,10 +145,9 @@ function selectDelivery(type) {
 
 function updatePriceByLength() {
     const quantity = parseInt(document.getElementById('lengthInput').value) || 1;
-    const basePrice = 5900;
-    const discountedPrice = 5400; // 500 DZD off
-    const pricePerUnit = quantity >= 2 ? discountedPrice : basePrice;
-    const productTotal = quantity * pricePerUnit;
+    const pricePerUnit = 5900;
+    const discount = quantity >= 2 ? 500 : 0; // 500 DZD off total for 2+
+    const productTotal = (quantity * pricePerUnit) - discount;
     
     document.getElementById('displayPrice').textContent = `${pricePerUnit.toLocaleString()} دينار`;
     document.getElementById('summaryPrice').textContent = `${productTotal.toLocaleString()} دينار`;
@@ -158,10 +157,9 @@ function updatePriceByLength() {
 
 function updateTotal() {
     const quantity = parseInt(document.getElementById('lengthInput').value) || 1;
-    const basePrice = 5900;
-    const discountedPrice = 5400; // 500 DZD off
-    const pricePerUnit = quantity >= 2 ? discountedPrice : basePrice;
-    const productTotal = quantity * pricePerUnit;
+    const pricePerUnit = 5900;
+    const discount = quantity >= 2 ? 500 : 0; // 500 DZD off total for 2+
+    const productTotal = (quantity * pricePerUnit) - discount;
     const total = productTotal + deliveryFee;
     
     document.getElementById('totalPrice').textContent = `${total.toLocaleString()} دينار`;
