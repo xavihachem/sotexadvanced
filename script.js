@@ -308,6 +308,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
+        // Track Facebook Pixel Purchase Event immediately after validation
+        if (typeof fbq !== 'undefined') {
+            const totalValue = parseFloat(formData.total.replace(/[^\d]/g, ''));
+            fbq('track', 'Purchase', {
+                value: totalValue,
+                currency: 'DZD',
+                content_name: 'أدوات العناية والتجميل',
+                content_type: 'product',
+                num_items: formData.area
+            });
+            console.log('Facebook Pixel Purchase event fired:', totalValue, 'DZD');
+        }
+        
         try {
             const submitBtn = document.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
@@ -325,18 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
             
             if (result.success) {
-                // Track Facebook Pixel Purchase Event
-                if (typeof fbq !== 'undefined') {
-                    const totalValue = parseFloat(formData.total.replace(/[^\d]/g, ''));
-                    fbq('track', 'Purchase', {
-                        value: totalValue,
-                        currency: 'DZD',
-                        content_name: 'أدوات العناية والتجميل',
-                        content_type: 'product',
-                        num_items: formData.area
-                    });
-                }
-                
                 showSuccessModal();
                 document.querySelector('form').reset();
                 document.getElementById('phoneSuccess').classList.add('hidden');
