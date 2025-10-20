@@ -285,7 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('form').addEventListener('submit', async (e) => {
         e.preventDefault();
-        console.log('🚀 Form submitted!');
         
         const formData = {
             name: document.querySelector('input[placeholder="الاسم الكامل"]').value,
@@ -307,31 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!formData.name || !formData.wilaya || !formData.baladiya || !formData.address) {
             alert('الرجاء ملء جميع الحقول المطلوبة');
             return;
-        }
-        
-        // Track Facebook Pixel Purchase Event immediately after validation
-        console.log('Checking Facebook Pixel...', typeof fbq);
-        if (typeof fbq !== 'undefined') {
-            const totalValue = parseFloat(formData.total.replace(/[^\d]/g, ''));
-            console.log('Firing Facebook Pixel Purchase event...', {
-                value: totalValue,
-                currency: 'DZD',
-                content_name: 'أدوات العناية والتجميل',
-                content_type: 'product',
-                num_items: formData.area
-            });
-            
-            fbq('track', 'Purchase', {
-                value: totalValue,
-                currency: 'DZD',
-                content_name: 'أدوات العناية والتجميل',
-                content_type: 'product',
-                num_items: formData.area
-            });
-            
-            console.log('✅ Facebook Pixel Purchase event fired successfully!');
-        } else {
-            console.error('❌ Facebook Pixel (fbq) is not defined!');
         }
         
         try {
