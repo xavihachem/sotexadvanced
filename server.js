@@ -51,12 +51,12 @@ app.post('/api/order', async (req, res) => {
                 <p><strong>العنوان:</strong> ${address}</p>
             </div>
             
-            <div style="background-color: #fef3c7; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                <h3 style="color: #1f2937;">تفاصيل الطلب</h3>
-                <p><strong>المنتج:</strong> العازل الحراري للمركبات</p>
-                <p><strong>الكمية:</strong> ${area} متر مربع</p>
-                <p><strong>نوع التوصيل:</strong> ${deliveryType === 'office' ? 'توصيل إلى المكتب' : 'توصيل إلى المنزل'}</p>
-                <p><strong>المجموع الكلي:</strong> ${total} دينار</p>
+            <div style="background-color: #fce7f3; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #ec4899;">
+                <h3 style="color: #1f2937;">💄 تفاصيل الطلب</h3>
+                <p><strong>المنتج:</strong> مجموعة أدوات العناية والتجميل الفاخرة</p>
+                <p><strong>الكمية:</strong> ${area} مجموعة</p>
+                <p><strong>نوع التوصيل:</strong> ${deliveryType === 'office' ? 'توصيل إلى المكتب (600 دج)' : 'توصيل إلى المنزل (850 دج)'}</p>
+                <p><strong>المجموع الكلي:</strong> ${total}</p>
             </div>
             
             <div style="text-align: center; margin-top: 30px; color: #6b7280;">
