@@ -65,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
     imageContainer.addEventListener('mouseleave', () => {
         autoRotateInterval = setInterval(autoRotateImages, 6000);
     });
+    
+    // Initialize prices on page load
+    updatePriceByLength();
 });
 
 // Algerian phone number validation
