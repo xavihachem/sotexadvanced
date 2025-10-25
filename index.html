@@ -97,6 +97,20 @@
     </style>
 </head>
 <body class="bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+    
+    <!-- FREE DELIVERY Floating Banner -->
+    <div class="fixed top-20 left-4 z-50 animate-bounce">
+        <div class="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white px-6 py-3 rounded-full shadow-2xl border-4 border-white transform hover:scale-110 transition-all duration-300">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-truck text-2xl"></i>
+                <div class="text-right">
+                    <p class="font-black text-lg leading-tight">توصيل مجاني</p>
+                    <p class="text-xs font-semibold opacity-90">لكل الجزائر 🇩🇿</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Navbar -->
     <nav class="bg-white/95 backdrop-blur-xl shadow-lg sticky top-0 z-50 border-b border-pink-200">
         <div class="container mx-auto px-4 py-3">
@@ -147,7 +161,7 @@
                         
                         <!-- Image Counter -->
                         <div class="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold z-20 shadow-lg">
-                            <span id="currentImageIndex">1</span> / 11
+                            <span id="currentImageIndex">1</span> / 5
                         </div>
                         
                         <!-- Navigation Arrows -->
@@ -168,21 +182,9 @@
                                 class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
                             <img src="/images/grouped/image5.jpg" onclick="changeImage(this.src, 2)" 
                                 class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
-                            <img src="/images/individualimages/image1.jpg" onclick="changeImage(this.src, 3)" 
+                            <img src="/images/grouped/position3.jpg" onclick="changeImage(this.src, 3)" 
                                 class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
-                            <img src="/images/individualimages/image2.jpg" onclick="changeImage(this.src, 4)" 
-                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
-                            <img src="/images/individualimages/image3.jpg" onclick="changeImage(this.src, 5)" 
-                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
-                            <img src="/images/individualimages/image4.jpg" onclick="changeImage(this.src, 6)" 
-                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
-                            <img src="/images/individualimages/image5.jpg" onclick="changeImage(this.src, 7)" 
-                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
-                            <img src="/images/individualimages/image6.jpg" onclick="changeImage(this.src, 8)" 
-                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
-                            <img src="/images/individualimages/image7version1.jpg" onclick="changeImage(this.src, 9)" 
-                                class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
-                            <img src="/images/individualimages/image7version2.jpg" onclick="changeImage(this.src, 10)" 
+                            <img src="/images/grouped/position4.jpg" onclick="changeImage(this.src, 4)" 
                                 class="thumbnail-img w-20 h-20 object-cover rounded-xl cursor-pointer transition-all duration-300 border-2 border-gray-200 hover:border-pink-400 shadow-md hover:shadow-xl flex-shrink-0 snap-center">
                         </div>
                     </div>
@@ -318,25 +320,75 @@
                     </div>
                     
                     
-                    <!-- Delivery Options -->
-                    <div>
-                        <div class="flex items-center gap-2 mb-3">
-                            <i class="fas fa-truck text-pink-500"></i>
-                            <span class="font-semibold">سعر التوصيل</span>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <button type="button" onclick="selectDelivery('office')" id="officeDelivery" 
-                                class="delivery-option flex flex-col items-center justify-center p-4 border-2 border-pink-500 bg-gradient-to-br from-pink-50 to-purple-50 rounded-lg transition-all duration-300 hover:shadow-md">
-                                <i class="fas fa-building text-2xl text-pink-500 mb-2"></i>
-                                <span class="font-semibold text-gray-800">توصيل إلى المكتب</span>
-                                <span class="text-sm text-pink-600 font-bold mt-1" id="officePrice">600 دينار</span>
-                            </button>
-                            <button type="button" onclick="selectDelivery('home')" id="homeDelivery" 
-                                class="delivery-option flex flex-col items-center justify-center p-4 border-2 border-gray-300 bg-white rounded-lg transition-all duration-300 hover:shadow-md hover:border-pink-400">
-                                <i class="fas fa-home text-2xl text-gray-500 mb-2"></i>
-                                <span class="font-semibold text-gray-800">توصيل إلى المنزل</span>
-                                <span class="text-sm text-gray-600 font-bold mt-1" id="homePrice">850 دينار</span>
-                            </button>
+                    <!-- FREE DELIVERY Banner -->
+                    <div class="relative overflow-hidden">
+                        <!-- Animated Background -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 opacity-10 animate-pulse"></div>
+                        
+                        <!-- FREE Delivery Badge -->
+                        <div class="relative bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 border-2 border-green-400 rounded-xl p-6 shadow-lg">
+                            <div class="flex items-center justify-center gap-3 mb-4">
+                                <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-full font-bold text-lg shadow-md animate-bounce">
+                                    <i class="fas fa-gift ml-2"></i>
+                                    عرض خاص
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mb-4">
+                                <h3 class="text-3xl font-black bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
+                                    🎉 توصيل مجاني 100% 🎉
+                                </h3>
+                                <p class="text-lg font-semibold text-gray-700">
+                                    <i class="fas fa-truck text-green-500 ml-1"></i>
+                                    نوصل لباب بيتك مجاناً في كل ولايات الجزائر!
+                                </p>
+                            </div>
+                            
+                            <!-- Delivery Options -->
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-map-marker-alt text-green-500"></i>
+                                <span class="font-semibold">اختر مكان التوصيل</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" onclick="selectDelivery('home')" id="homeDelivery" 
+                                    class="delivery-option flex flex-col items-center justify-center p-4 border-2 border-green-500 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg transition-all duration-300 hover:shadow-md">
+                                    <i class="fas fa-home text-2xl text-green-500 mb-2"></i>
+                                    <span class="font-semibold text-gray-800">توصيل إلى المنزل</span>
+                                    <span class="text-sm text-green-600 font-bold mt-1 flex items-center gap-1">
+                                        <i class="fas fa-check-circle"></i>
+                                        مجاني
+                                    </span>
+                                </button>
+                                <button type="button" onclick="selectDelivery('office')" id="officeDelivery" 
+                                    class="delivery-option flex flex-col items-center justify-center p-4 border-2 border-gray-300 bg-white rounded-lg transition-all duration-300 hover:shadow-md hover:border-green-400">
+                                    <i class="fas fa-building text-2xl text-gray-500 mb-2"></i>
+                                    <span class="font-semibold text-gray-800">توصيل إلى المكتب</span>
+                                    <span class="text-sm text-green-600 font-bold mt-1 flex items-center gap-1">
+                                        <i class="fas fa-check-circle"></i>
+                                        مجاني
+                                    </span>
+                                </button>
+                            </div>
+                            
+                            <!-- Free Delivery Features -->
+                            <div class="mt-4 grid grid-cols-2 gap-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-700">
+                                    <i class="fas fa-shield-alt text-green-500"></i>
+                                    <span>توصيل آمن</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-gray-700">
+                                    <i class="fas fa-clock text-green-500"></i>
+                                    <span>توصيل سريع</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-gray-700">
+                                    <i class="fas fa-star text-yellow-500"></i>
+                                    <span>خدمة ممتازة</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-gray-700">
+                                    <i class="fas fa-heart text-pink-500"></i>
+                                    <span>بكل حب</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -348,12 +400,40 @@
                         </label>
                         <input type="number" id="lengthInput" value="1" min="1" oninput="updatePriceByLength()" 
                             class="w-full px-4 py-3 border-2 border-pink-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                        <div class="mt-2 bg-gradient-to-r from-pink-50 to-purple-50 border-r-4 border-pink-500 p-3 rounded-lg">
-                            <p class="text-sm font-semibold text-pink-700 flex items-center gap-2">
-                                <i class="fas fa-star text-yellow-500"></i>
-                                وفّر 500 دينار! اطلب مجموعتين أو أكثر واحصل على خصم فوري
-                                <i class="fas fa-fire text-pink-500 animate-pulse"></i>
-                            </p>
+                        <!-- Super Fancy Discount Banner -->
+                        <div class="mt-2 relative overflow-hidden">
+                            <!-- Animated sparkles background -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 opacity-20 animate-pulse"></div>
+                            
+                            <div class="relative bg-gradient-to-r from-yellow-50 via-orange-50 to-red-50 border-2 border-yellow-400 rounded-xl p-4 shadow-lg">
+                                <!-- Discount Badge -->
+                                <div class="flex items-center justify-center gap-3 mb-2">
+                                    <div class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-1 rounded-full font-bold text-xs shadow-md animate-bounce">
+                                        🔥 عرض محدود
+                                    </div>
+                                </div>
+                                
+                                <!-- Main Discount Message -->
+                                <div class="text-center">
+                                    <p class="text-lg font-black bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent mb-1 flex items-center justify-center gap-2">
+                                        <i class="fas fa-gift text-yellow-500 animate-bounce"></i>
+                                        <span>وفّر 500 دينار!</span>
+                                        <i class="fas fa-star text-yellow-500 animate-spin" style="animation-duration: 3s;"></i>
+                                    </p>
+                                    <p class="text-sm font-semibold text-gray-700 flex items-center justify-center gap-2">
+                                        <i class="fas fa-shopping-cart text-orange-500"></i>
+                                        اطلب مجموعتين أو أكثر واحصل على خصم فوري
+                                        <i class="fas fa-fire text-red-500 animate-pulse"></i>
+                                    </p>
+                                </div>
+                                
+                                <!-- Decorative elements -->
+                                <div class="flex items-center justify-center gap-4 mt-2">
+                                    <div class="h-1 w-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full"></div>
+                                    <i class="fas fa-crown text-yellow-500 text-xl"></i>
+                                    <div class="h-1 w-12 bg-gradient-to-r from-orange-400 to-red-400 rounded-full"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -373,7 +453,7 @@
                         
                         <div class="flex items-center justify-between bg-gradient-to-r from-pink-50 to-purple-50 p-3 rounded-lg mb-2">
                             <div class="flex items-center gap-3">
-                                <img src="/images/individualimages/image1.jpg" alt="Product" class="w-12 h-12 rounded-lg object-cover shadow-md">
+                                <img src="/images/grouped/present1.jpg" alt="Product" class="w-12 h-12 rounded-lg object-cover shadow-md">
                                 <span class="text-sm font-semibold">أدوات العناية والتجميل</span>
                             </div>
                             <div class="flex items-center gap-2">
@@ -381,12 +461,16 @@
                             </div>
                         </div>
                         
-                        <div class="flex items-center justify-between bg-gradient-to-r from-purple-50 to-blue-50 p-3 rounded-lg">
+                        <div class="flex items-center justify-between bg-gradient-to-r from-green-50 to-emerald-50 p-3 rounded-lg border-2 border-green-300">
                             <div class="flex items-center gap-2">
-                                <i class="fas fa-truck text-purple-500"></i>
-                                <span class="font-semibold">سعر التوصيل</span>
+                                <i class="fas fa-truck text-green-500"></i>
+                                <span class="font-semibold">التوصيل</span>
                             </div>
-                            <span class="font-bold text-purple-600" id="deliveryFeeSummary">600 دينار</span>
+                            <span class="font-bold text-green-600 flex items-center gap-2">
+                                <i class="fas fa-gift"></i>
+                                مجاني 100%
+                                <i class="fas fa-heart text-pink-500 animate-pulse"></i>
+                            </span>
                         </div>
                         
                         <div class="flex items-center justify-between mt-4 pt-4 border-t">
