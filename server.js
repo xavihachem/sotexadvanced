@@ -36,7 +36,7 @@ app.post('/api/order', async (req, res) => {
     console.log('========================================');
     console.log('Order data:', JSON.stringify(req.body, null, 2));
     
-    const { name, phone, wilaya, baladiya, address, deliveryType, area, total } = req.body;
+    const { name, phone, wilaya, baladiya, deliveryType, area, total } = req.body;
     
     // Create email content
     const emailContent = `
@@ -48,7 +48,6 @@ app.post('/api/order', async (req, res) => {
                 <p><strong>رقم الهاتف:</strong> ${phone}</p>
                 <p><strong>الولاية:</strong> ${wilaya}</p>
                 <p><strong>البلدية:</strong> ${baladiya}</p>
-                <p><strong>العنوان:</strong> ${address}</p>
             </div>
             
             <div style="background-color: #fce7f3; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #ec4899;">

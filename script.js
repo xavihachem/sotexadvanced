@@ -307,7 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
             phone: document.getElementById('phoneInput').value,
             wilaya: document.getElementById('wilayaSelect').options[document.getElementById('wilayaSelect').selectedIndex].text,
             baladiya: document.getElementById('baladiyaSelect').value,
-            address: document.querySelector('input[placeholder="العنوان"]').value,
             deliveryType: selectedDeliveryType,
             area: document.getElementById('lengthInput').value,
             total: document.getElementById('totalPrice').textContent
@@ -319,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        if (!formData.name || !formData.wilaya || !formData.baladiya || !formData.address) {
+        if (!formData.name || !formData.wilaya || !formData.baladiya) {
             alert('الرجاء ملء جميع الحقول المطلوبة');
             return;
         }
